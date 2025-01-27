@@ -63,11 +63,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
+/*LOCK TABLES `users` WRITE; */
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'user1','user1@test.com','userPassword');
+/*INSERT INTO `users` VALUES (1,'user1','user1@test.com','userPassword');*/
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
+/*UNLOCK TABLES;*/
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

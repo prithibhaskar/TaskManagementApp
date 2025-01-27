@@ -1,8 +1,11 @@
 import express, { json } from 'express';
+import cors from 'cors';
 const app = express();
 import userRouter from './routes/users.js';
 import loginRouter from './routes/auth.js';
 const PORT = process.env.PORT || 3000;
+
+app.use(cors({origin: 'http://localhost:8000'}));
 
 app.use(json());
 
