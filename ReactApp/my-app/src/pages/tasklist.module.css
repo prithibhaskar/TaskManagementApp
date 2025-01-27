@@ -1,0 +1,144 @@
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.textbox {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #df5353;
+  border-radius: 4px;
+  font-size: 16px;
+  display: 'inline-block' ;
+  transition: border-color 0.3s;
+}
+
+.task-manager {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  padding: 20px;
+  width: 100%;
+}
+
+h1 {
+  color: #df5353;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  align-self: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #df5353;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Task List */
+.tasklist {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.taskitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.taskitem:hover {
+  background-color: #f0f0f0;
+}
+
+.taskcheckbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+}
+
+.task-checkbox:checked + .task-label {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-label {
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.task-label:hover {
+  color: #007bff;
+}
+
+.delete-btn {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ff4d3b;
+}
+
+.delete-btn:focus {
+  outline: none;
+}
+
+/* Add Task Button */
+.addtaskbtn {
+  width: 30%;
+  padding: 8px;
+  height: 50%;
+  margin-top: 0px;
+  margin-left: 20px;
+  background-color: #df5353;
+  color: white;
+  font-size: 16px;
+  border: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  display: 'inline-block';
+}
+
+.addtaskbtn:hover {
+  background-color: #915050;
+}
+
+.addtaskbtn:focus {
+  outline: none;
+}

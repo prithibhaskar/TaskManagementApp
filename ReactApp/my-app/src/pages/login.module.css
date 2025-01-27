@@ -1,0 +1,165 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body styling */
+  .section {
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  /* Container for the login form */
+  .logincontainer {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1500px;
+    text-align: center;
+  }
+  
+  /* Form header */
+  .h2 {
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    color: #ff6f61;
+  }
+
+  .message {
+    margin-bottom: 1.2rem;
+    font-size: 19px;
+    color: #333;
+  }
+  
+  /* Input fields */
+  .textbox {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #df5353;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  /* Input focus state */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Submit button */
+  /* Basic button style */
+.fancybutton {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff6f61, #ff9a8b);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover effect */
+  .fancybutton:hover {
+    background: linear-gradient(45deg, #ff9a8b, #ff6f61);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: #ff6f61;
+    letter-spacing: 1px;
+  }
+  
+  /* Focus effect */
+  .fancy-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 105, 97, 0.3);
+  }
+  
+  /* Active state */
+  .fancy-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icon with button (optional) */
+  .fancy-button .button-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Add a bounce effect to the icon when hovered */
+  .fancy-button:hover .button-icon {
+    transform: translateX(4px);
+  }
+  
+  /* Disabled button state */
+  .fancy-button:disabled {
+    background: #e0e0e0;
+    color: #b0b0b0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }  
+  
+  /* Submit button hover state */
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Forgot password link */
+  .forgot-password {
+    display: block;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  /* Forgot password link hover state */
+  .forgot-password:hover {
+    color: #0056b3;
+  }
+  
+  /* Error message */
+  .errormessage {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 1rem;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 20px;
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    button[type="submit"] {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
