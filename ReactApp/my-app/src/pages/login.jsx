@@ -44,6 +44,7 @@ const Login = () => {
                     <div></div>
                     <button className={s.fancybutton} onClick={handleLogin}>Login!</button>
                     <p className={s.errormessage}>{formError}</p>
+                    <a className={s.message} href="/register">New User? Register!</a>
                 </div>
             )};
             {isLoggedIn && <Navigate to="/tasks" replace={true}/>}
