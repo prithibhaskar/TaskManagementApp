@@ -30,6 +30,8 @@ jobs:
       run: | 
         docker-compose up -d 
       working-directory: ./services
+    - name: Test docker
+      run: docker ps
     - name: Stop docker images
       run: docker-compose down
       working-directory: ./services
