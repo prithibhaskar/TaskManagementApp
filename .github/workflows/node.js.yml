@@ -21,13 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        working-directory: ./services
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: docker-compose up -d
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Run docker images
+      run: docker-compose up -d
+      working-directory: ./services
+    - name: Run tests
+      run: npm test
