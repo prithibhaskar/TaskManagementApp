@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysqldb
+    environment:
+      - DB_HOST=mysqldb
+      - DB_PORT=3306
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_USERNAME=root
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - nodejs-mysql-network
+  
+  mysqldb:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    networks:
+      - nodejs-mysql-network
+  
+networks:
+  nodejs-mysql-network:
+    name: nodejs-mysql-network
