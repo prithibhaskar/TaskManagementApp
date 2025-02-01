@@ -31,5 +31,7 @@ jobs:
       working-directory: ./services
     - name: Run tests
       run: npm test
+      working-directory: ./services
     - name: Stop docker images
       run: docker-compose down
+      working-directory: ./services
