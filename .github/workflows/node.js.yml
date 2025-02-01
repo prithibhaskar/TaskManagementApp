@@ -29,7 +29,7 @@ jobs:
     - name: Run docker images
       run: docker-compose up -d
       working-directory: ./services
-    - name: Run tests
+    - name: Start tests
       run: npm test
       working-directory: ./services
     - name: Stop docker images
