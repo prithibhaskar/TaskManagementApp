@@ -10,5 +10,5 @@ COPY . .
 # Expose the application port
 EXPOSE 3000
  
-# Run the App
-CMD npm start
+# Run tests
+CMD npm test
