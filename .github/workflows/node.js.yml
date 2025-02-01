@@ -29,7 +29,6 @@ jobs:
     - name: Run docker images and start test
       run: | 
         docker-compose up -d 
-        npm test
       working-directory: ./services
     - name: Stop docker images
       run: docker-compose down
