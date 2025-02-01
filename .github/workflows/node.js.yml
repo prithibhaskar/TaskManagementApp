@@ -21,8 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Check docker compose 
+      run: docker-compose --version
     - name: Run docker images
       run: docker-compose up -d
       working-directory: ./services
     - name: Run tests
       run: npm test
+    - name: Stop docker images
+      run: docker-compose down
