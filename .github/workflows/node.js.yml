@@ -26,11 +26,10 @@ jobs:
         version: '2.14.2' 
     - name: Check docker compose 
       run: docker-compose --version
-    - name: Run docker images
-      run: docker-compose up -d
-      working-directory: ./services
-    - name: Start tests
-      run: npm test
+    - name: Run docker images and start test
+      run: | 
+        docker-compose up -d 
+        npm test
       working-directory: ./services
     - name: Stop docker images
       run: docker-compose down
