@@ -11,4 +11,4 @@ COPY . .
 EXPOSE 3000
  
 # Run tests
-CMD npm start
+CMD npm test
