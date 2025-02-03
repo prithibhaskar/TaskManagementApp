@@ -1,18 +1,7 @@
 # TaskManagementApp
 ## Architecture
 
-┌─────────────────┐         REST                  ┌─────────────────┐
-│                 │◄─────────────────────────────►│                 │
-│  React Frontend │                               │  Node.js Backend│
-│                 │                               │  (Express)      │
-└─────────────────┘                               └────────┬────────┘
-                                                           │
-                                                           │ MySQL Protocol
-                                                           ▼
-                                                    ┌──────────────┐
-                                                    │   MySQL      │
-                                                    │   Database   │
-                                                    └──────────────┘
+![screenshot](./screenshot.png)
 
 ## Components & Flow:
 ### Frontend (React):
