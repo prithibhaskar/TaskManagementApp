@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "PORT=3001 mocha",
+    "test": "PORT=3001 mocha --exit",
     "start": "node index.js"
   },
   "keywords": [],
