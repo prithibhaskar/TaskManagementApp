@@ -1,7 +1,7 @@
 # TaskManagementApp
 ## Architecture
 
-![screenshot](./screenshot.png)
+![screenshot](./Architecture.png)
 
 ## Components & Flow:
 ### Frontend (React):
