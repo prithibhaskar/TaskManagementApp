@@ -1,11 +1,17 @@
-const config = {
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+console.log("db host", process.env.MYSQL_DB_HOST);
+
+const configs = {
   db: {
-    host: "::1",
+    host: process.env.MYSQL_DB_HOST,
     user: "root",
-    password: "password",
-    database: "USER_TASKS",
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
     connectTimeout: 60000
   },
   listPerPage: 10,
 };
-export default config;
+export default configs;

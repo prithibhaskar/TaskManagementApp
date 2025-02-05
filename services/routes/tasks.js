@@ -8,7 +8,7 @@ router.get("/", validateToken, async(req, res, next) => {
     try{
         const tasks = await query(`SELECT * from tasks where userid = '${req.userId}'`);
         if(!tasks){tasks = [];} 
-        res.status(200).send(tasks);
+        res.status(200).json({tasks:tasks});
     }
     catch(err){
         res.status(500);

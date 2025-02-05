@@ -2,6 +2,7 @@ import s from "./login.module.css";
 import logo from '../TaskManager.png';
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const Login = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,6 +24,9 @@ const Login = () => {
             console.log("Request",requestOptions);
             const response = await fetch('http://127.0.0.1:3000/login/', requestOptions);
             if(response.status === 200){
+                const resJson = await response.json();
+                Cookies.set('token', resJson.token, {expires:60, secure:false});
+                console.log("Set cookie : ", Cookies.get('token'));
                 setIsLoggedIn(true);
             }
             else{

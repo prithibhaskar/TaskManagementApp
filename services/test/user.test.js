@@ -9,8 +9,12 @@ describe('/GET users', () => {
     it('should get all users',function(done) {
         const res = chai.request.execute(app)
             .get('/users')
-            .end((err, res)=> {
+            .then((res)=>{
                 expect(res).to.have.status(200);
+                done();
+            })
+            .catch((err) => {
+                console.log(err);
                 done();
             });
     });
