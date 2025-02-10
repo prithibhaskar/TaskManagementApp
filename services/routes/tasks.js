@@ -27,5 +27,16 @@ router.post("/", validateToken, async(req, res, next) => {
     }
 });
 
+router.delete("/", validateToken, async(req, res, next) => {
+    try{
+        await query(`DELETE FROM tasks where taskid = '${req.body.taskid}' && userid = '${req.userId}'`);
+        res.status(200).json({message:"Task deleted Successfully"});
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json("Error deleting task");
+    }
+});
+
 export default router;
 
