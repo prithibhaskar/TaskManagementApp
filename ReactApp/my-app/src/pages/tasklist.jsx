@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 
 const Tasklist = () => {
     const [taskdescription, setTask] = useState(""); 
+    const [tasksdict, setTasksdict] = useState("");
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => async function fetchTasks() {
@@ -17,7 +18,12 @@ const Tasklist = () => {
         const response = await fetch('http://127.0.0.1:3000/tasks/', requestOptions);
         if(response.status === 200){
             const resJson = await response.json();
-            setTasks(resJson.tasks);
+            const tasksdata = {};
+            resJson.tasks.forEach(element => {
+                tasksdata[element.taskid] = element.taskdescription;
+            });
+            setTasksdict(tasksdata);
+            //setTasks(resJson.tasks);
         }
         else{
             console.log("Error fetching tasks for user");
@@ -36,7 +42,12 @@ const Tasklist = () => {
         console.log("Request",requestOptions);
         const response = await fetch('http://127.0.0.1:3000/tasks/', requestOptions);
         if(response.status === 200){
-            setTasks(tasks => [...tasks, taskdescription]);
+            const resJson = await response.json();
+            console.log(resJson.taskId);
+            console.log(taskdescription);
+            setTasksdict(prevdict => ({...prevdict, [resJson.taskId]: taskdescription}));
+            console.log(tasksdict);
+            //setTasks(tasks => [...tasks, taskdescription]);
         }
     };
 
@@ -50,12 +61,18 @@ const Tasklist = () => {
 
             <div className={s.tasklist}>
                 <div className={s.h2}>Your list of tasks</div>
-                <div className={s.tasklist}>
-                    {
-                        tasks.map((item,index) => (
-                            <li key={index} className={s.taskitem}>{item.taskdescription}</li>
-                        ))
-                    }
+                <div>
+                    {Object.keys(tasksdict).length > 0 ? (
+                        <ul>
+                            {Object.entries(tasksdict).map(([key, value]) => (
+                                <li key={key} className={s.taskitem}>
+                                    {value}
+                                </li>
+                            ))}
+                        </ul>
+                    ): (
+                        <p> Loading data ... </p>
+                    )}
                 </div>
             </div>
         </div>

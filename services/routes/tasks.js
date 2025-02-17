@@ -18,8 +18,10 @@ router.get("/", validateToken, async(req, res, next) => {
 
 router.post("/", validateToken, async(req, res, next) => {
     try{
-        await query(`INSERT INTO tasks (taskdescription,userid) VALUES('${req.body.taskdescription}', '${req.userId}')`);
-        res.status(200).json({message:"Task added Successfully"});
+        const results = await query(`INSERT INTO tasks (taskdescription,userid) VALUES('${req.body.taskdescription}', '${req.userId}')`);
+        const data = {taskId: results.insertId, message:"Task added Successfully"};
+        res.status(200);
+        res.end(JSON.stringify(data));
     }
     catch(err){
         console.log(err);
